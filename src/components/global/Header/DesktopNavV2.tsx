@@ -50,7 +50,7 @@ export function DesktopNavV2() {
                 </div>
               </PopoverTrigger>
               <PopoverContent
-                className="w-[100vw] mt-2 p-0 border-0 shadow-xl rounded-lg backdrop-blur-xl"
+                className="w-screen mt-2 p-0 border-0 shadow-xl rounded-lg backdrop-blur-xl"
                 align="center"
                 sideOffset={8}
                 hideWhenDetached={true}
@@ -97,7 +97,7 @@ export function DesktopNavV2() {
                             >
                               <div className="flex items-start gap-4">
                                 {child.icon && (
-                                  <div className="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+                                  <div className="shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
                                     <child.icon className="w-6 h-6 text-primary" />
                                   </div>
                                 )}
@@ -116,8 +116,8 @@ export function DesktopNavV2() {
                                     </div>
 
                                     {child.subLabel && (
-                                      <div className="flex-shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
-                                        <ChevronDown className="w-4 h-4 text-primary rotate-[-90deg]" />
+                                      <div className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
+                                        <ChevronDown className="w-4 h-4 text-primary -rotate-90" />
                                       </div>
                                     )}
                                   </div>

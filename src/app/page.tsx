@@ -1,10 +1,9 @@
-import { Container } from "@/components/global/Container";
-import Image from "next/image";
+import { HomePageContainer } from "@/container";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Container>
-      <p>Home</p>
-    </Container>
+    <>
+      <HomePageContainer />
+    </>
   );
 }

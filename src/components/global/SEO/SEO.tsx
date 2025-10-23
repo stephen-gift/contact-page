@@ -13,19 +13,18 @@ export const SEO = ({
   prefix,
   suffix,
   path,
-  description = "🚀 [PROJECT_NAME] provides [WHAT_YOUR_APP_DOES] to help [TARGET_AUDIENCE] achieve [BENEFIT].",
-  keywords = "[PROJECT_NAME], [PRIMARY_KEYWORD], [SECONDARY_KEYWORD], [EXTRA_KEYWORDS]",
+  description = "Stephen Gift is a skilled software developer specializing in modern web technologies, React, Next.js, and full-stack development. Explore projects and get in touch.",
+  keywords = "Stephen Gift, software developer, web developer, React, Next.js, TypeScript, full-stack development, portfolio, web technologies",
   image = "/og-image.jpeg"
 }: MetadataProps): Metadata => {
-  const siteName = "[PROJECT_NAME]";
-  const author = "[AUTHOR_OR_COMPANY]";
-  const twitterHandle = "@[TWITTER_HANDLE]";
-  const baseUrl = "https://[YOUR_DOMAIN].com";
+  const siteName = "Stephen Gift";
+  const author = "Stephen Gift";
+  const twitterHandle = "@stephengift"; // Update with your actual Twitter handle
+  const baseUrl = "https://stephen-contact-page.vercel.app"; // Update with your actual domain
 
   const title = `${prefix ? prefix + " | " : ""}${siteName}${
     suffix ? " - " + suffix : ""
   }`;
-
   const url = `${baseUrl}${path}`;
 
   return {
@@ -75,11 +74,6 @@ export const SEO = ({
       shortcut: "/favicon-16x16.png",
       apple: "/apple-touch-icon.png"
     },
-    manifest: "/site.webmanifest",
-    verification: {
-      google: "[GOOGLE_VERIFICATION_CODE]",
-      yandex: "[YANDEX_VERIFICATION_CODE]",
-      yahoo: "[YAHOO_VERIFICATION_CODE]"
-    }
+    manifest: "/site.webmanifest"
   };
 };

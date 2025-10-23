@@ -4,7 +4,7 @@ import "./globals.css";
 import ReduxProvider from "@/components/providers/ReduxProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Header } from "@/components/global/Header";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "sonner";
 
 const afacad = Afacad({
   variable: "--font-afacad",
