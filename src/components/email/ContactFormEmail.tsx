@@ -66,8 +66,8 @@ export const ContactFormEmail = ({
                   width={80}
                   src={
                     isAdmin
-                      ? `${baseUrl}/contact.svg`
-                      : `${baseUrl}/contact.svg`
+                      ? `https://stephen-contact-page.vercel.app/contact.svg`
+                      : `https://stephen-contact-page.vercel.app/contact.svg`
                   }
                   alt={isAdmin ? "Message Icon" : "Thank You Icon"}
                 />
@@ -268,7 +268,7 @@ export const ContactFormEmail = ({
           <Section style={footerContent}>
             <Img
               width={32}
-              src={`${baseUrl}/logo.svg`}
+              src={`https://stephen-contact-page.vercel.app/logo.svg`}
               alt="Stephen Gift"
               style={logo}
             />
