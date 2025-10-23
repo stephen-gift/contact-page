@@ -23,7 +23,7 @@ interface ContactFormEmailProps {
   type: "admin" | "customer";
 }
 
-const baseUrl = `https://stephen-contact-page.vercel.app/`;
+const baseUrl = `https://stephen-contact-page.vercel.app`;
 
 export const ContactFormEmail = ({
   name,
