@@ -34,6 +34,7 @@ const HomePageContainer = (props: Props) => {
                   asChild
                   size="lg"
                   className="bg-[#F16A00] hover:bg-[#e55f00] text-white"
+                  data-testid="test-home-about-button"
                 >
                   <Link href="/about" className="flex items-center gap-2">
                     Learn More About Me
@@ -41,7 +42,12 @@ const HomePageContainer = (props: Props) => {
                   </Link>
                 </Button>
 
-                <Button asChild variant="outline" size="lg">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  data-testid="test-home-contact-button"
+                >
                   <Link href="/contact" className="flex items-center gap-2">
                     Get In Touch
                     <ArrowRight className="h-4 w-4" />
@@ -53,7 +59,7 @@ const HomePageContainer = (props: Props) => {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50" data-testid="test-home-features">
           <Container>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 md:text-4xl">
@@ -104,7 +110,10 @@ const HomePageContainer = (props: Props) => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer
+        className="bg-gray-900 text-white py-12"
+        data-testid="test-home-footer"
+      >
         <Container>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
@@ -112,26 +121,29 @@ const HomePageContainer = (props: Props) => {
               <p className="text-gray-400">Frontend Engineer</p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 text-center">
+            <nav className="flex flex-col sm:flex-row gap-6 text-center">
               <Link
                 href="/"
                 className="text-gray-400 hover:text-white transition-colors"
+                data-testid="test-home-footer-link"
               >
                 Home
               </Link>
               <Link
                 href="/about"
                 className="text-gray-400 hover:text-white transition-colors"
+                data-testid="test-home-footer-link"
               >
                 About
               </Link>
               <Link
                 href="/contact"
                 className="text-gray-400 hover:text-white transition-colors"
+                data-testid="test-home-footer-link"
               >
                 Contact
               </Link>
-            </div>
+            </nav>
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
