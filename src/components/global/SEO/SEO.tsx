@@ -19,7 +19,7 @@ export const SEO = ({
 }: MetadataProps): Metadata => {
   const siteName = "Stephen Gift";
   const author = "Stephen Gift";
-  const twitterHandle = "@stephengift"; // Update with your actual Twitter handle
+  const twitterHandle = "@_stephengift"; // Update with your actual Twitter handle
   const baseUrl = "https://stephen-contact-page.vercel.app"; // Update with your actual domain
 
   const title = `${prefix ? prefix + " | " : ""}${siteName}${
