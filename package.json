@@ -6,7 +6,10 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update:year": "node -e \"const fs=require('fs'); let content=fs.readFileSync('README.md','utf8'); content=content.replace(/\\*\\*Last Updated\\*\\*:.*$/m, '**Last Updated**: ' + new Date().getFullYear()); fs.writeFileSync('README.md', content); console.log('Year updated to: ' + new Date().getFullYear());\"",
+    "prebuild": "yarn update:year",
+    "predev": "yarn update:year"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
