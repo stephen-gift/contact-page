@@ -76,9 +76,16 @@ export default function ContactForm() {
     form.reset();
   };
 
+  const getErrorId = (fieldName: string) => `error-${fieldName}`;
+
   return (
     <>
-      <form id="form-rhf-contact" onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        id="form-rhf-contact"
+        onSubmit={form.handleSubmit(onSubmit)}
+        noValidate
+        aria-label="Contact form"
+      >
         <FieldGroup>
           {/* Name Field */}
           <Controller
@@ -93,12 +100,20 @@ export default function ContactForm() {
                   {...field}
                   id="form-rhf-contact-name"
                   aria-invalid={fieldState.invalid}
+                  aria-describedby={
+                    fieldState.error ? getErrorId("name") : undefined
+                  }
+                  aria-required={true}
                   placeholder="Enter your full name"
                   autoComplete="name"
                   data-testid="test-contact-name"
                 />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
+                {fieldState.invalid && fieldState.error && (
+                  <FieldError
+                    id={getErrorId("name")}
+                    data-testid="test-contact-error-name"
+                    errors={[fieldState.error]}
+                  />
                 )}
               </Field>
             )}
@@ -116,12 +131,20 @@ export default function ContactForm() {
                   id="form-rhf-contact-email"
                   type="email"
                   aria-invalid={fieldState.invalid}
+                  aria-describedby={
+                    fieldState.error ? getErrorId("email") : undefined
+                  }
+                  aria-required="true"
                   placeholder="your.email@example.com"
                   autoComplete="email"
                   data-testid="test-contact-email"
                 />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
+                {fieldState.invalid && fieldState.error && (
+                  <FieldError
+                    id={getErrorId("email")}
+                    data-testid="test-contact-error-email"
+                    errors={[fieldState.error]}
+                  />
                 )}
               </Field>
             )}
@@ -140,12 +163,20 @@ export default function ContactForm() {
                   {...field}
                   id="form-rhf-contact-subject"
                   aria-invalid={fieldState.invalid}
+                  aria-describedby={
+                    fieldState.error ? getErrorId("subject") : undefined
+                  }
+                  aria-required="true"
                   placeholder="What is this regarding?"
                   autoComplete="off"
                   data-testid="test-contact-subject"
                 />
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
+                {fieldState.invalid && fieldState.error && (
+                  <FieldError
+                    id={getErrorId("subject")}
+                    data-testid="test-contact-error-subject"
+                    errors={[fieldState.error]}
+                  />
                 )}
               </Field>
             )}
@@ -164,6 +195,10 @@ export default function ContactForm() {
                   {...field}
                   id="form-rhf-contact-message"
                   aria-invalid={fieldState.invalid}
+                  aria-describedby={
+                    fieldState.error ? getErrorId("message") : undefined
+                  }
+                  aria-required="true"
                   placeholder="Please describe your message in detail..."
                   rows={5}
                   className="min-h-24 resize-none"
@@ -173,8 +208,12 @@ export default function ContactForm() {
                   Include any relevant details about your inquiry. Must be
                   between 10 and 1000 characters.
                 </FieldDescription>
-                {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error]} />
+                {fieldState.invalid && fieldState.error && (
+                  <FieldError
+                    id={getErrorId("message")}
+                    data-testid="test-contact-error-message"
+                    errors={[fieldState.error]}
+                  />
                 )}
               </Field>
             )}
@@ -182,7 +221,14 @@ export default function ContactForm() {
         </FieldGroup>
 
         <Field orientation="horizontal" className="mt-6">
-          <Button type="button" variant="outline" onClick={() => form.reset()}>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => {
+              form.reset();
+              setIsSubmitted(false);
+            }}
+          >
             Reset
           </Button>
           <Button
@@ -197,12 +243,18 @@ export default function ContactForm() {
 
       {/* Success Modal */}
       <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent
+          className="sm:max-w-md"
+          data-testid="test-contact-success"
+        >
           <DialogHeader className="text-center">
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
               <CheckCircle2 className="h-6 w-6 text-green-600" />
             </div>
-            <DialogTitle className="text-center mt-4">
+            <DialogTitle
+              className="text-center mt-4"
+              data-testid="test-contact-success"
+            >
               Message Sent Successfully!
             </DialogTitle>
             <DialogDescription className="text-center">
