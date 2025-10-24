@@ -59,7 +59,7 @@ const HomePageContainer = (props: Props) => {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 bg-gray-50" data-testid="test-home-features">
+        <section className="py-16 bg-gray-300" data-testid="test-home-features">
           <Container>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 md:text-4xl">
